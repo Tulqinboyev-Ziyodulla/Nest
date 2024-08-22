@@ -114,17 +114,6 @@ const Admin = () => {
               width: "100%",
             }}
           >
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: "" }}
-              defaultCenter={defaultProps.center}
-              defaultZoom={defaultProps.zoom}
-            >
-              <AnyReactComponent
-                lat={59.955413}
-                lng={30.337844}
-                text="My Marker"
-              />
-            </GoogleMapReact>
           </div>
           <div className="office">{card}</div>
           <div className="contact">
