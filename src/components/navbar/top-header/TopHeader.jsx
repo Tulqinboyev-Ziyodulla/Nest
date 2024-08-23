@@ -19,8 +19,7 @@ const TopHeader = () => {
         <form className="search__form">
           <select name="" id="">
             <option value="all"> All Categories</option>
-            <option value="moto"> Moto </option>
-            <option value="bag"> Bag</option>
+            <option value="categories"> Categories </option>
           </select>
           <input placeholder="Search for items..." type="text" />
           <button>
@@ -32,23 +31,15 @@ const TopHeader = () => {
           <SlLocationPin />
           <select name="" id="">
             <option value="location">Your Location</option>
-            <option value="fergara">Fergana</option>
-            <option value="kakand">Kakand</option>
+            <option value="tashkent">Tashkent</option>
           </select>
         </div>
         <ul className="nav__link">
           <li>
-            <Link onClick={scrollTop} to={"/compare"}>
-              <img src={compare} alt="" />
-              <p className="count">3</p>
-              <span>Compare</span>
-            </Link>
-          </li>
-          <li>
             <Link onClick={scrollTop} to={"wishlist"}>
               <IoMdHeartEmpty />
               <p className="count">6</p>
-              <span>Wishlist</span>
+              <span>Wishlist</span> 
             </Link>
           </li>
           <li>
