@@ -27,19 +27,14 @@ const Login = () => {
         return (
           localStorage.setItem("token", res.data.token),
           navigate("/admin"),
-          toast.success("Welcome to Admin panel!")
+          toast.success("Admin paneliga xush kelibsiz!")
         );
       })
-      .catch((err) => toast.error("Username or password is incorrect"))
+      .catch((err) => toast.error("Foydalanuvchi nomi yoki parol noto'g'ri"))
       .finally(() => setLoading(false));
   };
   return (
-    <motion.section
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
-      className="login"
-    >
+    <>
       <div className="navigate">
         <div className="container">
           <ul>
@@ -98,8 +93,7 @@ const Login = () => {
           </form>
         </div>
       </div>
-      {/* <ToastContainer /> */}
-    </motion.section>
+    </>
   );
 };
 

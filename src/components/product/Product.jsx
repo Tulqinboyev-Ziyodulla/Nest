@@ -13,18 +13,18 @@ const Product = () => {
     categories === "all" ? "" : `/category/${categories}`
   }?limit=${count * 10}`;
   let { data, loading } = useFetch(url, count, categories);
-  let { data: cate } = useFetch("/products/categories");
-  let category = cate?.data.map((el, inx) => (
-    <li key={inx}>
-      <button
-        name={el}
-        onClick={(e) => (setCategories(e.target.name), setCount(0.5))}
-      >
-        {el.slice(0, 1).toUpperCase()}
-        {el.slice(1)}
-      </button>
-    </li>
-  ));
+let { data: cate } = useFetch("/products/categories");
+let category = cate?.data.map((el, inx) => (
+  <li key={inx}>
+    <button
+      name={el}
+      onClick={(e) => (setCategories(e.target.name), setCount(0.5))}
+    >
+      {el.slice(0, 1).toUpperCase()}
+      {el.slice(1)}
+    </button>
+  </li>
+));
   let card = data?.data?.map((el) => (
     <div key={el.id} className="card">
       <Link onClick={scrollTop} to={`/product/${el.id}`}>

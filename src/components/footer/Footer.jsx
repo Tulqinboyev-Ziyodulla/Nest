@@ -141,19 +141,19 @@ const Footer = () => {
           <div className="top">
             <span>Follow us</span>
             <div className="link">
-              <Link target="_blank" to={"https://www.facebook.com/"}>
+              <Link>
                 <img src={fot1} alt="" />
               </Link>
-              <Link target="_blank" to={"https://twitter.com/"}>
+              <Link>
                 <img src={fot2} alt="" />
               </Link>
-              <Link target="_blank" to={"https://www.instagram.com/"}>
+              <Link>
                 <img src={fot3} alt="" />
               </Link>
               <Link>
                 <img src={fot4} alt="" />
               </Link>
-              <Link target="_blank" to={"https://www.youtube.com/"}>
+              <Link>
                 <img src={fot5} alt="" />
               </Link>
             </div>

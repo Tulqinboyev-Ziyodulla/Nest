@@ -1,5 +1,4 @@
 import React from "react";
-import { GrLocation } from "react-icons/gr";
 import img from "../../assets/images/admin.png";
 import Stay from "../../components/stay/Stay";
 import { Link } from "react-router-dom";
@@ -9,13 +8,6 @@ import { FaAngleRight } from "react-icons/fa6";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const Admin = () => {
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
   let item = [
     {
       id: 1,
@@ -39,18 +31,6 @@ const Admin = () => {
       email: "Email: contact@Evara.com",
     },
   ];
-  let card = item?.map((el) => (
-    <div className="card" key={el.id}>
-      <h4>{el.title}</h4>
-      <p>{el.location}</p>
-      <p>{el.phone}</p>
-      <p>{el.email}</p>
-      <button>
-        <GrLocation />
-        View map
-      </button>
-    </div>
-  ));
   return (
     <section className="admin">
       <div className="navigate">
@@ -114,8 +94,12 @@ const Admin = () => {
               width: "100%",
             }}
           >
+              <AnyReactComponent
+                lat={59.955413}
+                lng={30.337844}
+                text="My Marker"
+              />
           </div>
-          <div className="office">{card}</div>
           <div className="contact">
             <form>
               <h4>Contact form</h4>

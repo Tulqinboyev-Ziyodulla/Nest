@@ -8,7 +8,6 @@ import img6 from "../../assets/images/featured6.png";
 import img7 from "../../assets/images/featured7.png";
 import img8 from "../../assets/images/featured8.png";
 import img9 from "../../assets/images/featured9.png";
-import img10 from "../../assets/images/featured10.png";
 
 const Featured = () => {
   let item = [
@@ -75,13 +74,6 @@ const Featured = () => {
       item: 34,
       bg: "#FFFCEB",
     },
-    {
-      id: 10,
-      url: img10,
-      title: "Coffe & Tea",
-      item: 89,
-      bg: "#FEEFEA",
-    },
   ];
   let card = item?.map((el) => (
     <div style={{ background: `${el.bg}` }} key={el.id} className="card">
@@ -90,7 +82,7 @@ const Featured = () => {
       <p>{el.item} items</p>
     </div>
   ));
-  let linkItem = ["Cake & Milk", "Coffes & Teas", "Pet Foods", "Vegetables"];
+  let linkItem = ["Cake & Milk", "Pet Foods", "Vegetables"];
   let link = linkItem?.map((el, inx) => <li key={inx}>{el}</li>);
   return (
     <section className="featured">

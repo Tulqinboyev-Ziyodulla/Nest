@@ -5,17 +5,6 @@ import { useFetch } from "../../hooks/useFetch";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import img from "../../assets/images/Vector.svg";
-import img1 from "../../assets/images/1.svg";
-import img2 from "../../assets/images/2.svg";
-import img3 from "../../assets/images/3.svg";
-import img4 from "../../assets/images/4.svg";
-import img5 from "../../assets/images/5.svg";
-import product1 from "../../assets/images/thumbnail-3.jpg.svg";
-import product2 from "../../assets/images/thumbnail-4.jpg.svg";
-import product3 from "../../assets/images/thumbnail-5.jpg.svg";
-import slider from "../../assets/images/slider.svg";
-import { FaStar } from "react-icons/fa";
-import { CiFilter } from "react-icons/ci";
 import { AiOutlineHome } from "react-icons/ai";
 import SingleRouteLoading from "../../components/loading/SingleRouteLoading";
 import { FaAngleRight } from "react-icons/fa6";
@@ -27,12 +16,7 @@ const SingleRoute = () => {
   let { data, loading } = useFetch(`/products/${id}`);
   console.log(data);
   return (
-    <motion.section
-      initial={{ transform: "scale(.9)" }}
-      animate={{ transform: "scale(1)" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
-      className="single__route"
-    >
+    <>
       <div className="navigate">
         <div className="container">
           <ul>
@@ -57,33 +41,27 @@ const SingleRoute = () => {
                   src={data?.data?.image}
                   alt={data?.data?.title}
                 />
-                <div className="imges">
-                  <img src={data?.data?.image} alt={data?.data?.title} />
-                  <img src={data?.data?.image} alt={data?.data?.title} />
-                  <img src={data?.data?.image} alt={data?.data?.title} />
-                  <img src={data?.data?.image} alt={data?.data?.title} />
-                </div>
               </div>
               <div className="product__about">
-                <h2>{data?.data?.title}</h2>
+                <h2 className="on">{data?.data?.title}</h2>
                 <div className="price">
-                  <h1> ${data?.data?.price * 0.74}</h1>
+                  <h1 className="onn"> ${data?.data?.price * 0.74}</h1>
                   <span>
-                    <h6>26% Off</h6>
-                    <h4>${data?.data?.price}</h4>
+                    <h6 className="hh">26% Off</h6>
+                    <h4 className="hhh">${data?.data?.price}</h4>
                   </span>
                 </div>
-                <p>{data?.data?.description}</p>
+                <p className="title__desc">{data?.data?.description}</p>
                 <div className="cart">
                   <div className="count">
-                    <button
+                    <button className="btnn"
                       disabled={count <= 1}
                       onClick={() => setCount((p) => p - 1)}
                     >
                       -
                     </button>
-                    <span>{count}</span>
-                    <button
+                    <span className="spend">{count}</span>
+                    <button className="btm"
                       disabled={count >= 10}
                       onClick={() => setCount((p) => p + 1)}
                     >
@@ -100,28 +78,28 @@ const SingleRoute = () => {
                     <img src={img} alt="" />
                   </div>
                 </div>
-                <ul>
-                  <li>
+                <ul className="type">
+                  <li className="types">
                     <p>Type: </p>
                     <h5>Organic</h5>
                   </li>
-                  <li>
+                  <li className="types">
                     <p>MFG: </p>
                     <h5>Jun 4.2022</h5>
                   </li>
-                  <li>
+                  <li className="types">
                     <p>LIFE:</p>
                     <h5> 70 days </h5>
                   </li>
-                  <li>
+                  <li className="types">
                     <p>SKU: </p>
                     <h5>FWM15VKT</h5>
                   </li>
-                  <li>
+                  <li className="types">
                     <p>Tags: </p>
                     <h5>Snack, Organic, Brown</h5>
                   </li>
-                  <li>
+                  <li className="types">
                     <p>Stock: </p>
                     <h5>8 Items In Stock</h5>
                   </li>
@@ -215,127 +193,9 @@ const SingleRoute = () => {
           </div>
         </div>
 
-        <div className="aside">
-          <div className="category">
-            <h4>Category</h4>
-            <div className="line">
-              <div className="hr1"></div>
-              <div className="hr2"></div>
-            </div>
-            <div className="table">
-              <div className="line">
-                <div className="img">
-                  <img src={img1} alt="Milk" />
-                  <p>Milks & Dairies</p>
-                </div>
-                <span>5</span>
-              </div>
-              <div className="line">
-                <div className="img">
-                  <img src={img2} alt="Clothing" />
-                  <p>Clothing</p>
-                </div>
-                <span>6</span>
-              </div>
-              <div className="line">
-                <div className="img">
-                  <img src={img3} alt="Pet Foods" />
-                  <p>Pet Foods</p>
-                </div>
-                <span>7</span>
-              </div>
-              <div className="line">
-                <div className="img">
-                  <img src={img4} alt="Baking material" />
-                  <p>Baking material</p>
-                </div>
-                <span>12</span>
-              </div>
-              <div className="line">
-                <div className="img">
-                  <img src={img5} alt="Fresh Fruit" />
-                  <p>Fresh Fruit</p>
-                </div>
-                <span>16</span>
-              </div>
-            </div>
-          </div>
-          <div className="category">
-            <h4>Fill by price</h4>
-            <div className="line">
-              <div className="hr1"></div>
-              <div className="hr2"></div>
-            </div>
-            <img src={slider} alt="" />
-            <div className="form">
-              <h5>
-                Form: <span>$500</span>
-              </h5>
-              <h5>
-                To: <span>$1000</span>
-              </h5>
-            </div>
-            <h6>Color</h6>
-            <label htmlFor="red">
-              <input id="red" type="checkbox" /> Red (56)
-            </label>
-            <label htmlFor="Green">
-              <input id="Green" type="checkbox" />
-              Green (78)
-            </label>
-            <label htmlFor="Blue">
-              <input id="Blue" type="checkbox" /> Blue (54)
-            </label>
-            <h6>Item Condition</h6>
-            <label htmlFor="New">
-              <input id="New" type="checkbox" /> New (1506)
-            </label>
-            <label htmlFor="Refurbished">
-              <input id="Refurbished" type="checkbox" />
-              Refurbished (27)
-            </label>
-            <label htmlFor="Used">
-              <input id="Used" type="checkbox" /> Used (45)
-            </label>
-            <button>
-              <CiFilter /> Fillter
-            </button>
-          </div>
-          <div className="category">
-            <h4>New Prodact</h4>
-            <div className="line">
-              <div className="hr1"></div>
-              <div className="hr2"></div>
-            </div>
-            <div className="row">
-              <img src={product1} alt="product" />
-              <span>
-                <h4>Chen Cardigan</h4>
-                <h5>$99.50</h5>
-                <FaStar />
-              </span>
-            </div>
-            <div className="row">
-              <img src={product2} alt="product" />
-              <span>
-                <h4>Chen Sweater</h4>
-                <h5>$89.50</h5>
-                <FaStar />
-              </span>
-            </div>
-            <div className="row">
-              <img src={product3} alt="product" />
-              <span>
-                <h4>Colorful Jacket</h4>
-                <h5>$25</h5>
-                <FaStar />
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
       <Stay />
-    </motion.section>
+    </>
   );
 };
 

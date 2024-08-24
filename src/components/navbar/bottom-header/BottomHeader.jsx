@@ -36,7 +36,7 @@ const BottomHeader = () => {
               <option value="all">All Categories</option>
             </select>
           </div>
-          <ul class="navbar__bottom">
+          <ul className="navbar__bottom">
             <li>
               <img src={icon1} alt="" />
               <span>Deals</span>
